@@ -1,0 +1,19 @@
+# Deadline guard at head 77b0325: incident lab home with a published summary; refresh deadline lowered to 3s so collection outlives it
+$ FM_HOME_SUMMARY_TIMEOUT=3 bin/fm-home-summary-refresh.sh
+exit=124 elapsed=3s
+  stderr: Terminated: 15
+  stderr: fm-home-summary-refresh: refresh exceeded its 3-second deadline
+$ FM_HOME_SUMMARY_TIMEOUT=3 bin/fm-home-summary-refresh.sh --best-effort
+exit=0 elapsed=5s
+  stderr: Terminated: 15
+$ tail -2 state/.home-summary-refresh.log
+[2026-10-16T01:13:26Z] refresh exceeded its 3-second deadline
+$ cmp last-good.json state/home-summary.json
+last complete summary byte-identical (generated=2026-10-15T10:00:00Z)
+$ ls state/ | grep -i tmp  (torn temp output left behind?)
+(none)
+$ grep -n HOME_SUMMARY_TIMEOUT= bin/fm-home-summary-refresh.sh  (default bound unchanged by this branch: git diff 230db82..HEAD touches no refresh script)
+41:HOME_SUMMARY_TIMEOUT=${FM_HOME_SUMMARY_TIMEOUT:-60}
+(empty diff above = unchanged)
+$ pgrep -fl incident-head2  (workers orphaned by the deadline kill?)
+(none)

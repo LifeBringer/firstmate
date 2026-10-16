@@ -1,0 +1,2 @@
+not ok - the status-triggered ledger differed from the real fresh producer
+exit=1 elapsed=140s

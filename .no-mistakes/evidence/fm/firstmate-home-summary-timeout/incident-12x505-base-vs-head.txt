@@ -1,0 +1,7 @@
+# Scenario: incident-shaped lab home (12 scout tasks, 505-line status history each), direct bin/fm-home-summary-refresh.sh, default 60s deadline, 8 CPUs, /bin/bash 3.2
+$ FM_HOME=<lab> bin/fm-home-summary-refresh.sh   # head 77b0325
+head-incident: exit=0 wall=51.5s
+$ FM_HOME=<lab> bin/fm-home-summary-refresh.sh   # base 230db82
+base-incident: exit=124 wall=61.2s
+  stderr: Terminated: 15
+  stderr: fm-home-summary-refresh: refresh exceeded its 60-second deadline

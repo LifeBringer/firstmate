@@ -1,0 +1,6 @@
+# Incident-shaped lab home (12 scouts x 505 status lines): producer bin/fm-fleet-snapshot.sh --secondmate-home-summary run directly (no outer deadline) at base 230db82 and head 77b0325 on the same home
+Result (run while other lab scenarios saturated the CPU): base producer 157s, head producer 22s, both rc=0. The two documents differed only in
+per-task current_state: under that load the 10s FM_SNAPSHOT_CREW_STATE_TIMEOUT fired for all 12 base reads and 8 of 12 head reads
+(state unknown/none), so 4 head tasks read parked/status-log and became holds. Decision keys were identical (gate-1..gate-12 in both).
+This loaded comparison is superseded by producer-equivalence-base-vs-head.txt, which ran on a quiet machine with the per-task bound
+raised so it cannot fire, and found byte-identical output. On a quiet machine the default-bound head publication read all 12 tasks as parked/status-log.

@@ -1,0 +1,14 @@
+# Dotted task ids a and a.row in one lab home: 6 direct refreshes at head 77b0325, each published ledger compared with the expected per-task decisions
+run 1: exit=0 a/a.row decisions=(per-run query used the wrong field .task; corrected query on the final ledger below) identical-to-base-producer=yes
+run 2: exit=0 a/a.row decisions=(per-run query used the wrong field .task; corrected query on the final ledger below) identical-to-base-producer=yes
+run 3: exit=0 a/a.row decisions=(per-run query used the wrong field .task; corrected query on the final ledger below) identical-to-base-producer=yes
+run 4: exit=0 a/a.row decisions=(per-run query used the wrong field .task; corrected query on the final ledger below) identical-to-base-producer=yes
+run 5: exit=0 a/a.row decisions=(per-run query used the wrong field .task; corrected query on the final ledger below) identical-to-base-producer=yes
+run 6: exit=0 a/a.row decisions=(per-run query used the wrong field .task; corrected query on the final ledger below) identical-to-base-producer=yes
+# Full fleet snapshot (default JSON mode) task rows for the dotted ids
+{"id":"a","current_state":"blocked","open":["alpha","alpha-dep"]}
+{"id":"a.row","current_state":"parked","open":["row-pick"]}
+# Published ledger (state/home-summary.json) open decisions for the dotted ids, after the 6 runs above
+[{"t":"a","key":"alpha","verb":"needs-decision"},{"t":"a","key":"alpha-dep","verb":"blocked"},{"t":"a.row","key":"row-pick","verb":"needs-decision"}]
+# Leftover per-task temp files under the lab home after the refreshes (expect none):
+(end)

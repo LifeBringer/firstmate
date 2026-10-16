@@ -1,0 +1,8 @@
+# Content equivalence on a history-heavy lab home (4 scouts x 505 status lines), quiet machine, FM_SNAPSHOT_CREW_STATE_TIMEOUT=120 so no per-task read can hit its bound
+base 230db82 producer rc=0 elapsed=255s
+head 77b0325 producer rc=0 elapsed=9s
+home summary JSON: byte-identical between base and head
+{"counts":{"active_children":0,"decisions_open":4,"holds":4,"queued":0,"landed":0,"endpoints":4},"states":{"parked/status-log":4},"open_keys":["gate-1","gate-2","gate-3","gate-4"]}
+# Edge-case lab home (time tags with colons, note-head keys, unkeyed default, invalid slug, captain-held, ship done reset, dotted ids a / a.row)
+home summary JSON: byte-identical between base and head
+[["a","alpha","needs-decision"],["a","alpha-dep","blocked"],["a.row","row-pick","needs-decision"],["heldkey","held-2","needs-decision"],["notehead","head-k","needs-decision"],["notehead","both","needs-decision"],["shipdone","after","needs-decision"],["stamps","stamp-1","needs-decision"],["unkeyed","default","needs-decision"]]

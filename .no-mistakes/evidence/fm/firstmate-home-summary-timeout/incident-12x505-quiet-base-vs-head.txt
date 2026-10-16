@@ -1,0 +1,11 @@
+# Quiet re-run (no other load): same incident-shaped lab home, default 60s deadline
+$ FM_HOME=<lab> bin/fm-home-summary-refresh.sh   # head 77b0325
+head-incident2: exit=0 wall=11.4s
+$ FM_HOME=<lab> bin/fm-home-summary-refresh.sh   # base 230db82
+base-incident2: exit=124 wall=61.4s
+  stderr: Terminated: 15
+  stderr: fm-home-summary-refresh: refresh exceeded its 60-second deadline
+$ ls -l state/home-summary.json (base lab after its refresh)
+ls: <scratch>/incident-base2/state/home-summary.json: No such file or directory
+$ tail -2 state/.home-summary-refresh.log (base lab)
+tail: <scratch>/incident-base2/state/.home-summary-refresh.log: No such file or directory
