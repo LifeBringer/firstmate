@@ -1,0 +1,25 @@
+$ chrome-devtools-axi open file://$LAB/site/a.html     # worker A, no session name
+page:
+  title: Worker A page
+  url: "file://$LAB/site/a.html"
+$ chrome-devtools-axi open file://$LAB/site/b.html     # worker B, no session name
+page:
+  title: Worker B page
+  url: "file://$LAB/site/b.html"
+bridges serving A and B: 3 (pid 17610, shared)
+$ chrome-devtools-axi pages     # B sees A's tab in the same browser
+pages[2]{id,url,selected}:
+  1,about:blank,false
+  2,file://$LAB/site/b.html,true
+help[2]:
+  Run `chrome-devtools-axi selectpage <id>` to switch tabs
+  Run `chrome-devtools-axi newpage <url>` to open a new tab
+$ chrome-devtools-axi stop     # worker A finishes and closes 'its' session
+status: stopped
+shared bridge 17610 alive? no
+$ chrome-devtools-axi snapshot     # worker B, mid-task
+error: No page is currently selected
+code: BROWSER_ERROR
+help[3]: Run `chrome-devtools-axi open <url>` to open a page,Run `chrome-devtools-axi pages` to list tabs,Run `chrome-devtools-axi selectpage <id>` to select a tab
+
+Note: the "bridges serving A and B: 3" count above is machine-wide and includes the 2 unrelated operator bridges (50417, 97817); both unnamed workers resolved the single pid file ~/.chrome-devtools-axi/bridge.pid, i.e. one shared bridge. B's open even navigated A's selected tab, and A's stop left B with no page.

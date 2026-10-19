@@ -1,0 +1,69 @@
+# Live lab crewmate: real Claude scout (sonnet, low effort) spawned by bin/fm-spawn.sh on a Herdr fm-lab-* session
+lab home: $LAB (marked disposable FM_HOME), task id: cdpcrewfa303b77, herdr session: fm-lab-cdpcrew-12127-734
+brief Rule 3 rendered by bin/fm-brief.sh at 0560751b:
+3. Use gh-axi for GitHub operations and chrome-devtools-axi for browser operations. Run every chrome-devtools-axi command under your own named session, as `CHROME_DEVTOOLS_AXI_SESSION=firstmate-a4dda48e-cdpcrewfa303b77 chrome-devtools-axi <command>`. Close every Chrome/Chromium session you start, including that named session and Playwright or other automation browsers, plus their tabs, contexts, and preview helpers, when browser work ends or fails or times out; reuse or close an earlier session before starting another, never leave sessions running, and never close browsers you did not start. Stop only your named session, with `CHROME_DEVTOOLS_AXI_SESSION=firstmate-a4dda48e-cdpcrewfa303b77 chrome-devtools-axi stop`, and never stop the default or another chrome-devtools-axi session.
+
+## Captain's intent / spec given to the crewmate (no mention of closing the browser)
+## Captain's intent
+Find out the confirmation code that the site's index.html page shows after its Reveal code button is pressed, as it appears in a real browser.
+
+## Firstmate spec
+Open index.html from your worktree in a browser (a file:// URL is fine), press the Reveal code button, and read the code the page then displays. Do not derive the code by reading the HTML or JavaScript source; the answer must come from the rendered page. Write a short report containing the code, then report done. Nothing else is in scope.
+
+# Herdr lifecycle declaration - NOT ENABLED
+**HARD SAFETY GATE:** this scaffold cannot inspect the task text filled in above.
+If the task will start, stop, delete, restart, profile, or otherwise drive Herdr lifecycle behavior, stop and regenerate the brief with `--herdr-lab` before dispatch.
+Do not add Herdr lifecycle commands to this unguarded brief by hand.
+
+# Setup
+You are in a disposable git worktree of site, at a detached HEAD on a clean default branch.
+This is a SCOUT task: the deliverable is a written report, not a PR.
+The worktree is your laboratory - install, run, edit, and make scratch commits freely; all of it is discarded at teardown.
+The report is the only thing that survives, so anything worth keeping must be in it.
+
+## Every browser command the crewmate ran (from its Claude transcript)
+$ CHROME_DEVTOOLS_AXI_SESSION=firstmate-a4dda48e-cdpcrewfa303b77 chrome-devtools-axi open "file:///Users/rona/.treehouse/site-5dadeb/1/site/index.html"
+$ CHROME_DEVTOOLS_AXI_SESSION=firstmate-a4dda48e-cdpcrewfa303b77 chrome-devtools-axi click @g1:1_3
+$ CHROME_DEVTOOLS_AXI_SESSION=firstmate-a4dda48e-cdpcrewfa303b77 chrome-devtools-axi stop
+
+## Browser-process timeline sampled every 2s during the run (operator's pre-existing bridges excluded)
+baseline operator bridges: 50417 97817 
+00:12:44 named-session=firstmate-a4dda48e-cdpcrewfa303b77 bridge=none alive=no chrome=0 | other-new-bridges=[] | default-session-alive=no | playwright-browser-procs=0
+00:13:28 named-session=firstmate-a4dda48e-cdpcrewfa303b77 bridge=none alive=no chrome=0 | other-new-bridges=[43317] | default-session-alive=no | playwright-browser-procs=0
+00:13:30 named-session=firstmate-a4dda48e-cdpcrewfa303b77 bridge=43317 alive=yes chrome=5 | other-new-bridges=[] | default-session-alive=no | playwright-browser-procs=0
+00:13:33 named-session=firstmate-a4dda48e-cdpcrewfa303b77 bridge=43317 alive=yes chrome=7 | other-new-bridges=[] | default-session-alive=no | playwright-browser-procs=0
+00:13:40 named-session=firstmate-a4dda48e-cdpcrewfa303b77 bridge=none alive=no chrome=0 | other-new-bridges=[] | default-session-alive=no | playwright-browser-procs=0
+00:14:42 monitor stopped
+
+## Crewmate status file
+working [at=1792386800]: opening index.html in browser to find Reveal code output
+done [at=1792386847]: Reveal code button shows confirmation code ORB-42-TEAL-7
+
+## Crewmate report (data/cdpcrewfa303b77/report.md)
+# Report: Reveal code confirmation value
+
+## What I did
+- Opened `index.html` from the worktree (`/Users/rona/.treehouse/site-5dadeb/1/site/index.html`) as a `file://` URL in a real browser via `chrome-devtools-axi`, session `firstmate-a4dda48e-cdpcrewfa303b77`.
+- Took a page snapshot: page title "Lab order status", with a "Reveal code" button and text "The confirmation code is only shown after you press the button."
+- Clicked the "Reveal code" button (`chrome-devtools-axi click @g1:1_3`).
+- Took a post-click snapshot, which showed a new text node rendered on the page.
+- Closed the named chrome-devtools-axi session.
+
+## Finding
+The confirmation code rendered on the page after pressing "Reveal code" is:
+
+```
+ORB-42-TEAL-7
+```
+
+This was read directly from the rendered DOM snapshot after the click (not derived from HTML/JS source).
+
+## Evidence
+- Pre-click snapshot: button `uid=g1:1_3 button "Reveal code"`.
+- Post-click snapshot: new node `uid=g2:2_0 "ORB-42-TEAL-7"` appeared alongside the (now focused) button.
+
+## Recommendation
+No further action needed; this was a read-only scouting task. No bugs or ship-worthy changes were found.
+
+## Notes
+`fm-captain-hold.sh complete --none` could not run in this environment (`data directory cannot be resolved`), but there is no genuine captain decision pending from this task — it's a single factual finding with no open question.

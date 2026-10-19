@@ -1,0 +1,5 @@
+# Session name for task fix-login scaffolded in three lab homes run from the same firstmate checkout (FM_ROOT)
+# primary and primary-two are both plain (non-secondmate) homes; fm_backend_hometag hashes FM_ROOT, not FM_HOME
+primary      CHROME_DEVTOOLS_AXI_SESSION=firstmate-a4dda48e-fix-login
+primary-two  CHROME_DEVTOOLS_AXI_SESSION=firstmate-a4dda48e-fix-login
+secondmate   CHROME_DEVTOOLS_AXI_SESSION=2ndmate-sm-browser-a4dda48e-fix-login

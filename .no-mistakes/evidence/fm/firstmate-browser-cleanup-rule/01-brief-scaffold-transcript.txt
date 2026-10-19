@@ -1,0 +1,42 @@
+$ FM_HOME=/var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary bin/fm-brief.sh ship-gh some-proj --mode direct-PR
+scaffolded: /var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary/data/ship-gh/brief.md (ship, mode=direct-PR; replace {TASK} and {FIRSTMATE_SPEC})
+exit=0
+$ FM_HOME=/var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary bin/fm-brief.sh ship-nm some-proj --mode no-mistakes
+scaffolded: /var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary/data/ship-nm/brief.md (ship, mode=no-mistakes; replace {TASK} and {FIRSTMATE_SPEC})
+exit=0
+$ FM_HOME=/var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary bin/fm-brief.sh ship-local some-proj --mode local-only
+scaffolded: /var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary/data/ship-local/brief.md (ship, mode=local-only; replace {TASK} and {FIRSTMATE_SPEC})
+exit=0
+$ FM_HOME=/var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary bin/fm-brief.sh ship-forgejo some-proj --mode direct-PR --forge forgejo
+scaffolded: /var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary/data/ship-forgejo/brief.md (ship, mode=direct-PR forge=forgejo; replace {TASK} and {FIRSTMATE_SPEC})
+exit=0
+$ FM_HOME=/var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary bin/fm-brief.sh ship-gerrit some-proj --mode direct-PR --forge gerrit
+scaffolded: /var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary/data/ship-gerrit/brief.md (ship, mode=direct-PR forge=gerrit shape=squash; replace {TASK} and {FIRSTMATE_SPEC})
+exit=0
+$ FM_HOME=/var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary bin/fm-brief.sh ship-external some-proj --mode direct-PR --forge external
+scaffolded: /var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary/data/ship-external/brief.md (ship, mode=direct-PR forge=external; replace {TASK} and {FIRSTMATE_SPEC})
+exit=0
+$ FM_HOME=/var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary bin/fm-brief.sh scout-a some-proj --scout
+scaffolded: /var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary/data/scout-a/brief.md (scout; replace {TASK} and {FIRSTMATE_SPEC})
+exit=0
+$ FM_HOME=/var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary bin/fm-brief.sh fix-login some-proj --mode direct-PR
+scaffolded: /var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary/data/fix-login/brief.md (ship, mode=direct-PR; replace {TASK} and {FIRSTMATE_SPEC})
+exit=0
+$ FM_HOME=/var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/secondmate bin/fm-brief.sh fix-login some-proj --scout
+scaffolded: /var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/secondmate/data/fix-login/brief.md (scout; replace {TASK} and {FIRSTMATE_SPEC})
+exit=0
+$ FM_HOME=/var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary bin/fm-brief.sh default some-proj --scout
+scaffolded: /var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary/data/default/brief.md (scout; replace {TASK} and {FIRSTMATE_SPEC})
+exit=0
+$ FM_HOME=/var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary bin/fm-brief.sh xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-one some-proj --mode direct-PR
+scaffolded: /var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary/data/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-one/brief.md (ship, mode=direct-PR; replace {TASK} and {FIRSTMATE_SPEC})
+exit=0
+$ FM_HOME=/var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary bin/fm-brief.sh xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-two some-proj --scout
+scaffolded: /var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary/data/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-two/brief.md (scout; replace {TASK} and {FIRSTMATE_SPEC})
+exit=0
+$ FM_HOME=/var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary bin/fm-brief.sh fix+login some-proj --scout
+scaffolded: /var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/primary/data/fix+login/brief.md (scout; replace {TASK} and {FIRSTMATE_SPEC})
+exit=0
+$ FM_HOME=/var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/secondmate bin/fm-brief.sh sm-charter --secondmate --no-projects
+scaffolded: /var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-brieflab.2rOCG6/secondmate/data/sm-charter/brief.md (secondmate charter; replace {TASK})
+exit=0

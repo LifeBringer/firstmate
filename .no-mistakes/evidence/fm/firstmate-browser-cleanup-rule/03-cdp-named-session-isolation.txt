@@ -1,0 +1,98 @@
+operator bridges before (real HOME, untouched): 50417 97817 
+
+## 1. Firstmate's own default session (simulated on a private port so the real 9224 default is never touched)
+$ CHROME_DEVTOOLS_AXI_PORT=18924 chrome-devtools-axi open file://$LAB/site/c.html
+page:
+  title: Firstmate own page
+  url: "file://$LAB/site/c.html"
+  refs: 2
+snapshot:
+uid=g1:1_0 RootWebArea "Firstmate own page" url="file://$LAB/site/c.html"
+  uid=g1:1_1 heading "Firstmate default-session page" level="1"
+help[1]:
+default-session bridge pid=3836 chrome procs=7
+
+## 2. Worker A (primary home, task fix-login) and worker B (secondmate home, same task id) open pages concurrently
+$ CHROME_DEVTOOLS_AXI_SESSION=firstmate-a4dda48e-fix-login chrome-devtools-axi open file://$LAB/site/a.html
+page:
+  title: Worker A page
+  url: "file://$LAB/site/a.html"
+  refs: 3
+snapshot:
+uid=g1:1_0 RootWebArea "Worker A page" url="file://$LAB/site/a.html"
+  uid=g1:1_1 heading "Worker A checkout form" level="1"
+  uid=g1:1_2 button "Pay A"
+$ CHROME_DEVTOOLS_AXI_SESSION=2ndmate-sm-browser-a4dda48e-fix-login chrome-devtools-axi open file://$LAB/site/b.html
+page:
+  title: Worker B page
+  url: "file://$LAB/site/b.html"
+  refs: 4
+snapshot:
+uid=g1:1_0 RootWebArea "Worker B page" url="file://$LAB/site/b.html"
+  uid=g1:1_1 heading "Worker B login form" level="1"
+  uid=g1:1_2 textbox "B email"
+  uid=g1:1_3 button "Sign in B"
+help[3]:
+$ CHROME_DEVTOOLS_AXI_SESSION=firstmate-a4dda48e-default chrome-devtools-axi open file://$LAB/site/a.html     # worker whose task id is literally 'default'
+page:
+  title: Worker A page
+  url: "file://$LAB/site/a.html"
+  refs: 3
+$ CHROME_DEVTOOLS_AXI_SESSION=firstmate-a4dda48e-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-24421fd1 chrome-devtools-axi open file://$LAB/site/b.html     # worker with an overlong id (64-char session name)
+page:
+  title: Worker B page
+  url: "file://$LAB/site/b.html"
+  refs: 4
+
+session                                                                  bridge chrome_procs
+firstmate-a4dda48e-fix-login                                               3899 7
+2ndmate-sm-browser-a4dda48e-fix-login                                      3972 7
+firstmate-a4dda48e-default                                                 4409 7
+firstmate-a4dda48e-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-24421fd1           6776 7
+default(fm own, port 18924)                                                3836 7
+
+## 3. Worker A finishes and runs exactly its rendered stop command
+$ CHROME_DEVTOOLS_AXI_SESSION=firstmate-a4dda48e-fix-login chrome-devtools-axi stop
+status: stopped
+A bridge 3899 alive? no; A Chrome processes still alive: 0 of 7
+B Chrome processes still alive: 7 of 7; firstmate default Chrome processes still alive: 7 of 7
+B bridge 3972 alive? yes; default bridge 3836 alive? yes
+$ CHROME_DEVTOOLS_AXI_SESSION=2ndmate-sm-browser-a4dda48e-fix-login chrome-devtools-axi snapshot     # B must still be on its own page, mid-task
+page:
+  title: Worker B page
+  refs: 4
+snapshot:
+uid=g2:1_0 RootWebArea "Worker B page" url="file://$LAB/site/b.html"
+  uid=g2:1_1 heading "Worker B login form" level="1"
+  uid=g2:1_2 textbox "B email"
+  uid=g2:1_3 button "Sign in B"
+help[3]:
+  Run `chrome-devtools-axi fill @g2:1_2 "text"` to fill the "B email" field
+B bridge pid after snapshot: 3972 (was 3972)
+
+## 4. Worker 'default' runs its rendered stop; firstmate's own default session must survive
+$ CHROME_DEVTOOLS_AXI_SESSION=firstmate-a4dda48e-default chrome-devtools-axi stop
+status: stopped
+D bridge 4409 alive? no; D Chrome alive: 0; default bridge 3836 alive? yes; default Chrome alive: 7 of 7
+$ CHROME_DEVTOOLS_AXI_PORT=18924 chrome-devtools-axi snapshot
+page:
+  title: Firstmate own page
+  refs: 2
+snapshot:
+uid=g2:1_0 RootWebArea "Firstmate own page" url="file://$LAB/site/c.html"
+  uid=g2:1_1 heading "Firstmate default-session page" level="1"
+
+## 5. Remaining workers stop their own sessions; then everything this run started is gone
+$ CHROME_DEVTOOLS_AXI_SESSION=2ndmate-sm-browser-a4dda48e-fix-login chrome-devtools-axi stop
+status: stopped
+$ CHROME_DEVTOOLS_AXI_SESSION=firstmate-a4dda48e-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-24421fd1 chrome-devtools-axi stop
+status: stopped
+$ CHROME_DEVTOOLS_AXI_PORT=18924 chrome-devtools-axi stop
+status: stopped
+firstmate-a4dda48e-fix-login: bridge alive=no leftover group procs=0
+2ndmate-sm-browser-a4dda48e-fix-login: bridge alive=no leftover group procs=0
+firstmate-a4dda48e-default: bridge alive=no leftover group procs=0
+firstmate-a4dda48e-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-24421fd1: bridge alive=no leftover group procs=0
+default: bridge alive=no leftover group procs=0
+Chrome processes this run started that are still alive: 0 of 35
+operator bridges after: 50417 97817 
