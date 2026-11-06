@@ -1,0 +1,14 @@
+=== BASE (bf05a4fc): 12 tasks x 300 iterations ===
+lines per task log: 1269
+tree=/var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-base-tree.Wi89ym
+refresh exit code=124 elapsed=60s (deadline 60s)
+stderr: Terminated: 15             env FM_ROOT_OVERRIDE="$FM_ROOT" FM_HOME="$FM_HOME" FM_STATE_OVERRIDE="$STATE" FM_DATA_OVERRIDE="$DATA" FM_CONFIG_OVERRIDE="$CONFIG" FM_PROJECTS_OVERRIDE="$PROJECTS" "$SCRIPT_DIR/fm-fleet-snapshot.sh" --secondmate-home-summary > "$HOME_SUMMARY_TMP" 2> "$HOME_SUMMARY_ERR_TMP"
+fm-home-summary-refresh: refresh exceeded its 60-second deadline
+no home-summary.json published
+
+=== FIXED (fd404cbd): 12 tasks x 300 iterations ===
+lines per task log: 1269
+tree=/Users/rona/.no-mistakes/worktrees/3897a68fc46a/01M6SC1D892FCDR4K8SNA9HGCP
+refresh exit code=0 elapsed=5s (deadline 60s)
+stderr: 
+{"generated":"2026-08-28T10:00:00Z","endpoints":12,"open_keys":["gate-1","gate-10","gate-11","gate-12","gate-2","gate-3","gate-4","gate-5","gate-6","gate-7","gate-8","gate-9"]}

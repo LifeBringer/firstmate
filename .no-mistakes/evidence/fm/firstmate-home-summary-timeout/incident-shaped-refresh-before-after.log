@@ -1,0 +1,13 @@
+=== BASE (bf05a4fc, before the fix): 12 tasks x 120 iterations ===
+lines per task log: 508
+tree=/var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-base-tree.Wi89ym
+refresh exit code=0 elapsed=29s (deadline 60s)
+stderr: 
+{"generated":"2026-08-28T10:00:00Z","endpoints":12,"open_keys":["gate-1","gate-10","gate-11","gate-12","gate-2","gate-3","gate-4","gate-5","gate-6","gate-7","gate-8","gate-9"]}
+
+=== FIXED (fd404cbd): 12 tasks x 120 iterations ===
+lines per task log: 508
+tree=/Users/rona/.no-mistakes/worktrees/3897a68fc46a/01M6SC1D892FCDR4K8SNA9HGCP
+refresh exit code=0 elapsed=4s (deadline 60s)
+stderr: 
+{"generated":"2026-08-28T10:00:00Z","endpoints":12,"open_keys":["gate-1","gate-10","gate-11","gate-12","gate-2","gate-3","gate-4","gate-5","gate-6","gate-7","gate-8","gate-9"]}

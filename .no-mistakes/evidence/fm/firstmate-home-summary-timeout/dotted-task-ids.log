@@ -1,0 +1,12 @@
+=== FIXED tree: tasks a, a.row, a.json, a.open-decisions, a.status, a.endpoint, a.row.row ===
+snapshot exit=0  stderr=[]
+{"endpoints":7,"decisions":[{"key":"gate-1","task":"a"},{"key":"gate-6","task":"a.endpoint"},{"key":"gate-3","task":"a.json"},{"key":"gate-4","task":"a.open-decisions"},{"key":"gate-2","task":"a.row"},{"key":"gate-7","task":"a.row.row"},{"key":"gate-5","task":"a.status"}]}
+--- full per-task JSON (default snapshot) ---
+full snapshot exit=0  stderr=[]
+{"id":"a","open":["gate-1"],"note":"needs-decision [key=gate-1]: decision for a"}
+{"id":"a.endpoint","open":["gate-6"],"note":"needs-decision [key=gate-6]: decision for a.endpoint"}
+{"id":"a.json","open":["gate-3"],"note":"needs-decision [key=gate-3]: decision for a.json"}
+{"id":"a.open-decisions","open":["gate-4"],"note":"needs-decision [key=gate-4]: decision for a.open-decisions"}
+{"id":"a.row","open":["gate-2"],"note":"needs-decision [key=gate-2]: decision for a.row"}
+{"id":"a.row.row","open":["gate-7"],"note":"needs-decision [key=gate-7]: decision for a.row.row"}
+{"id":"a.status","open":["gate-5"],"note":"needs-decision [key=gate-5]: decision for a.status"}

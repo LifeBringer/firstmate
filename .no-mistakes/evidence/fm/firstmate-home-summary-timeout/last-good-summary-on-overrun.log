@@ -1,0 +1,15 @@
+=== BASE bf05a4fc (histories grown to 450 iterations/task) ===
+first publish (small histories) exit=0 generated=2026-08-28T10:00:00Z
+second refresh (grown histories) exit=124 elapsed=60s
+stderr: fm-home-summary-refresh: refresh exceeded its 60-second deadline
+ledger: byte-identical to the last complete summary (generated=2026-08-28T10:00:00Z)
+ledger parses as valid JSON
+leftover temp files: 0
+
+=== FIXED fd404cbd (same histories) ===
+first publish (small histories) exit=0 generated=2026-08-28T10:00:00Z
+second refresh (grown histories) exit=0 elapsed=7s
+stderr: 
+ledger: UPDATED generated=2026-08-28T11:00:00Z
+ledger parses as valid JSON
+leftover temp files: 0
