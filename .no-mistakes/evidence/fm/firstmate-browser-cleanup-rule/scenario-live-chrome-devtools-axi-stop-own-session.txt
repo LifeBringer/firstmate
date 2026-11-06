@@ -1,0 +1,24 @@
+### bridges before stop
+18116 fm-firstmate-3f1a64ff-fix-login
+41514 leena-academy
+50034 fm-2ndmate-sm-browser-3f1a64ff-fix-login
+54409 reforge-discovery-1027
+8218 tribe-refresh-1027
+88329 gl-r02-1444
+93582 gl-check
+### run brief's stop command (session A)
+status: stopped
+### bridges after A stop
+41514 leena-academy
+50034 fm-2ndmate-sm-browser-3f1a64ff-fix-login
+54409 reforge-discovery-1027
+8218 tribe-refresh-1027
+88329 gl-r02-1444
+93582 gl-check
+### session B still serves a command:
+pages[2]{id,url,selected}:
+  1,about:blank,false
+  2,about:blank,true
+help[2]:
+  Run `chrome-devtools-axi selectpage <id>` to switch tabs
+  Run `chrome-devtools-axi newpage <url>` to open a new tab

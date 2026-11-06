@@ -1,0 +1,7 @@
+### stop session B with the secondmate brief's rendered stop command
+status: stopped
+### bridges now vs. before the test
+IDENTICAL to the pre-test bridge list
+### leftover session state dirs / processes for my names
+/Users/rona/.chrome-devtools-axi/sessions/fm-2ndmate-sm-browser-3f1a64ff-fix-login
+/Users/rona/.chrome-devtools-axi/sessions/fm-firstmate-3f1a64ff-fix-login
