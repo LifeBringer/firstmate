@@ -1,0 +1,6 @@
+status lines per task:      508
+head snapshot exit=0 wall=11s
+base snapshot exit=0 wall=60s
+SNAPSHOT JSON: byte-identical head vs base
+
+identical apart from lab home path

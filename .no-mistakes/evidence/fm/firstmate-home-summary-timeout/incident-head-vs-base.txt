@@ -1,0 +1,8 @@
+status lines per task:      508
+head snapshot exit=0 wall=4s
+base snapshot exit=0 wall=26s
+SNAPSHOT JSON: byte-identical head vs base
+{"state":"unknown","counts":{"active_children":0,"decisions_open":22,"holds":0,"queued":0,"landed":0,"endpoints":12},"decisions_open":[{"id":"fleet-1","key":"gate-1","verb":"needs-decision"},{"id":"fleet-10","key":"gate-10","verb":"needs-decision"},{"id":"fleet-10","key":"hold-10","verb":"blocked"},{"id":"fleet-11","key":"gate-11","verb":"needs-decision"},{"id":"fleet-12","key":"gate-12","verb":"needs-decision"},{"id":"fleet-12","key":"hold-12","verb":"blocked"},{"id":"fleet-12","key":"default","verb":"needs-decision"},{"id":"fleet-2","key":"gate-2","verb":"needs-decision"},{"id":"fleet-2","key":"hold-2","verb":"blocked"},{"id":"fleet-3","key":"gate-3","verb":"needs-decision"},{"id":"fleet-3","key":"default","verb":"needs-decision"},{"id":"fleet-4","key":"gate-4","verb":"needs-decision"},{"id":"fleet-4","key":"hold-4","verb":"blocked"},{"id":"fleet-5","key":"gate-5","verb":"needs-decision"},{"id":"fleet-6","key":"gate-6","verb":"needs-decision"},{"id":"fleet-6","key":"hold-6","verb":"blocked"},{"id":"fleet-6","key":"default","verb":"needs-decision"},{"id":"fleet-7","key":"gate-7","verb":"needs-decision"},{"id":"fleet-8","key":"gate-8","verb":"needs-decision"},{"id":"fleet-8","key":"hold-8","verb":"blocked"}]}
+
+base refresh exit=0 wall=39s published=yes stderr=
+head refresh exit=0 wall=7s published=yes stderr=

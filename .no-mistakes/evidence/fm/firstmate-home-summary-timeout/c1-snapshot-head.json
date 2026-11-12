@@ -1,0 +1,384 @@
+{
+  "schema": "fm-secondmate-home-summary.v1",
+  "hold_classifier_schema": "fm-captain-hold-buckets.v1",
+  "contributions": {
+    "known": 0,
+    "checked": 0,
+    "counts": {
+      "captain": 0,
+      "fleet": 0,
+      "maintainer": 0,
+      "nobody": 0
+    },
+    "unmeasured": 0,
+    "complete": true,
+    "proven_clear": true,
+    "stale_verdicts": 0,
+    "missing_verdicts": 0,
+    "unreadable_records": 0,
+    "valid_until": 900,
+    "captain": [],
+    "captain_omitted": 0
+  },
+  "generated": "2026-11-12T12:00:00Z",
+  "generated_epoch": 1794312000,
+  "home": "/var/folders/ck/xknkdlkn2r988194hhjy9m0r0000gn/T//fm-lab.nRXAGN",
+  "valid": false,
+  "reason": "child current state unavailable: fleet-1, fleet-10, fleet-11, fleet-12, fleet-2, fleet-3, fleet-4, fleet-5, fleet-6, fleet-7, fleet-8, fleet-9",
+  "invalidity": {
+    "kind": "child_current_unavailable",
+    "ids": [
+      "fleet-1",
+      "fleet-10",
+      "fleet-11",
+      "fleet-12",
+      "fleet-2",
+      "fleet-3",
+      "fleet-4",
+      "fleet-5",
+      "fleet-6",
+      "fleet-7",
+      "fleet-8",
+      "fleet-9"
+    ]
+  },
+  "state": "unknown",
+  "active_children": [],
+  "decisions_open": [
+    {
+      "id": "fleet-1",
+      "key": "gate-1",
+      "verb": "needs-decision",
+      "summary": "which base to rebuild from",
+      "reason": null,
+      "source": "status"
+    },
+    {
+      "id": "fleet-10",
+      "key": "gate-10",
+      "verb": "needs-decision",
+      "summary": "which base to rebuild from",
+      "reason": null,
+      "source": "status"
+    },
+    {
+      "id": "fleet-10",
+      "key": "hold-10",
+      "verb": "blocked",
+      "summary": "waiting on creds until 2026-12-01",
+      "reason": null,
+      "source": "status"
+    },
+    {
+      "id": "fleet-11",
+      "key": "gate-11",
+      "verb": "needs-decision",
+      "summary": "which base to rebuild from",
+      "reason": null,
+      "source": "status"
+    },
+    {
+      "id": "fleet-12",
+      "key": "gate-12",
+      "verb": "needs-decision",
+      "summary": "which base to rebuild from",
+      "reason": null,
+      "source": "status"
+    },
+    {
+      "id": "fleet-12",
+      "key": "hold-12",
+      "verb": "blocked",
+      "summary": "waiting on creds until 2026-12-01",
+      "reason": null,
+      "source": "status"
+    },
+    {
+      "id": "fleet-12",
+      "key": "default",
+      "verb": "needs-decision",
+      "summary": "keyless question for task 12",
+      "reason": null,
+      "source": "status"
+    },
+    {
+      "id": "fleet-2",
+      "key": "gate-2",
+      "verb": "needs-decision",
+      "summary": "which base to rebuild from",
+      "reason": null,
+      "source": "status"
+    },
+    {
+      "id": "fleet-2",
+      "key": "hold-2",
+      "verb": "blocked",
+      "summary": "waiting on creds until 2026-12-01",
+      "reason": null,
+      "source": "status"
+    },
+    {
+      "id": "fleet-3",
+      "key": "gate-3",
+      "verb": "needs-decision",
+      "summary": "which base to rebuild from",
+      "reason": null,
+      "source": "status"
+    },
+    {
+      "id": "fleet-3",
+      "key": "default",
+      "verb": "needs-decision",
+      "summary": "keyless question for task 3",
+      "reason": null,
+      "source": "status"
+    },
+    {
+      "id": "fleet-4",
+      "key": "gate-4",
+      "verb": "needs-decision",
+      "summary": "which base to rebuild from",
+      "reason": null,
+      "source": "status"
+    },
+    {
+      "id": "fleet-4",
+      "key": "hold-4",
+      "verb": "blocked",
+      "summary": "waiting on creds until 2026-12-01",
+      "reason": null,
+      "source": "status"
+    },
+    {
+      "id": "fleet-5",
+      "key": "gate-5",
+      "verb": "needs-decision",
+      "summary": "which base to rebuild from",
+      "reason": null,
+      "source": "status"
+    },
+    {
+      "id": "fleet-6",
+      "key": "gate-6",
+      "verb": "needs-decision",
+      "summary": "which base to rebuild from",
+      "reason": null,
+      "source": "status"
+    },
+    {
+      "id": "fleet-6",
+      "key": "hold-6",
+      "verb": "blocked",
+      "summary": "waiting on creds until 2026-12-01",
+      "reason": null,
+      "source": "status"
+    },
+    {
+      "id": "fleet-6",
+      "key": "default",
+      "verb": "needs-decision",
+      "summary": "keyless question for task 6",
+      "reason": null,
+      "source": "status"
+    },
+    {
+      "id": "fleet-7",
+      "key": "gate-7",
+      "verb": "needs-decision",
+      "summary": "which base to rebuild from",
+      "reason": null,
+      "source": "status"
+    },
+    {
+      "id": "fleet-8",
+      "key": "gate-8",
+      "verb": "needs-decision",
+      "summary": "which base to rebuild from",
+      "reason": null,
+      "source": "status"
+    },
+    {
+      "id": "fleet-8",
+      "key": "hold-8",
+      "verb": "blocked",
+      "summary": "waiting on creds until 2026-12-01",
+      "reason": null,
+      "source": "status"
+    }
+  ],
+  "holds": [],
+  "queued": [],
+  "landed": [],
+  "endpoints": [
+    {
+      "id": "fleet-1",
+      "state": "unknown",
+      "source": "none",
+      "endpoint": {
+        "target": "fmlab:fm-fleet-1",
+        "exists": false,
+        "agent_alive": "not_checked",
+        "status": "absent",
+        "observed_at": "2026-11-12T12:00:00Z",
+        "freshness": "fresh"
+      }
+    },
+    {
+      "id": "fleet-10",
+      "state": "unknown",
+      "source": "none",
+      "endpoint": {
+        "target": "fmlab:fm-fleet-10",
+        "exists": false,
+        "agent_alive": "not_checked",
+        "status": "absent",
+        "observed_at": "2026-11-12T12:00:00Z",
+        "freshness": "fresh"
+      }
+    },
+    {
+      "id": "fleet-11",
+      "state": "unknown",
+      "source": "none",
+      "endpoint": {
+        "target": "fmlab:fm-fleet-11",
+        "exists": false,
+        "agent_alive": "not_checked",
+        "status": "absent",
+        "observed_at": "2026-11-12T12:00:00Z",
+        "freshness": "fresh"
+      }
+    },
+    {
+      "id": "fleet-12",
+      "state": "unknown",
+      "source": "none",
+      "endpoint": {
+        "target": "fmlab:fm-fleet-12",
+        "exists": false,
+        "agent_alive": "not_checked",
+        "status": "absent",
+        "observed_at": "2026-11-12T12:00:00Z",
+        "freshness": "fresh"
+      }
+    },
+    {
+      "id": "fleet-2",
+      "state": "unknown",
+      "source": "none",
+      "endpoint": {
+        "target": "fmlab:fm-fleet-2",
+        "exists": false,
+        "agent_alive": "not_checked",
+        "status": "absent",
+        "observed_at": "2026-11-12T12:00:00Z",
+        "freshness": "fresh"
+      }
+    },
+    {
+      "id": "fleet-3",
+      "state": "unknown",
+      "source": "none",
+      "endpoint": {
+        "target": "fmlab:fm-fleet-3",
+        "exists": false,
+        "agent_alive": "not_checked",
+        "status": "absent",
+        "observed_at": "2026-11-12T12:00:00Z",
+        "freshness": "fresh"
+      }
+    },
+    {
+      "id": "fleet-4",
+      "state": "unknown",
+      "source": "none",
+      "endpoint": {
+        "target": "fmlab:fm-fleet-4",
+        "exists": false,
+        "agent_alive": "not_checked",
+        "status": "absent",
+        "observed_at": "2026-11-12T12:00:00Z",
+        "freshness": "fresh"
+      }
+    },
+    {
+      "id": "fleet-5",
+      "state": "unknown",
+      "source": "none",
+      "endpoint": {
+        "target": "fmlab:fm-fleet-5",
+        "exists": false,
+        "agent_alive": "not_checked",
+        "status": "absent",
+        "observed_at": "2026-11-12T12:00:00Z",
+        "freshness": "fresh"
+      }
+    },
+    {
+      "id": "fleet-6",
+      "state": "unknown",
+      "source": "none",
+      "endpoint": {
+        "target": "fmlab:fm-fleet-6",
+        "exists": false,
+        "agent_alive": "not_checked",
+        "status": "absent",
+        "observed_at": "2026-11-12T12:00:00Z",
+        "freshness": "fresh"
+      }
+    },
+    {
+      "id": "fleet-7",
+      "state": "unknown",
+      "source": "none",
+      "endpoint": {
+        "target": "fmlab:fm-fleet-7",
+        "exists": false,
+        "agent_alive": "not_checked",
+        "status": "absent",
+        "observed_at": "2026-11-12T12:00:00Z",
+        "freshness": "fresh"
+      }
+    },
+    {
+      "id": "fleet-8",
+      "state": "unknown",
+      "source": "none",
+      "endpoint": {
+        "target": "fmlab:fm-fleet-8",
+        "exists": false,
+        "agent_alive": "not_checked",
+        "status": "absent",
+        "observed_at": "2026-11-12T12:00:00Z",
+        "freshness": "fresh"
+      }
+    },
+    {
+      "id": "fleet-9",
+      "state": "unknown",
+      "source": "none",
+      "endpoint": {
+        "target": "fmlab:fm-fleet-9",
+        "exists": false,
+        "agent_alive": "not_checked",
+        "status": "absent",
+        "observed_at": "2026-11-12T12:00:00Z",
+        "freshness": "fresh"
+      }
+    }
+  ],
+  "counts": {
+    "active_children": 0,
+    "decisions_open": 22,
+    "holds": 0,
+    "queued": 0,
+    "landed": 0,
+    "endpoints": 12
+  },
+  "omitted": [
+    {
+      "surface": "decisions_open",
+      "count": 2
+    }
+  ]
+}

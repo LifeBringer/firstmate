@@ -1,0 +1,2 @@
+seed 1: lines=    2637 base-vs-head-print=identical base-vs-head-outvar=identical open-records=678
+seed 2: lines=    2610 base-vs-head-print=identical base-vs-head-outvar=identical open-records=765
